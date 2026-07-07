@@ -6,7 +6,13 @@ WITH raw_kunden AS (
 )
 SELECT
     changedate            as change_date,
-    vrb_filial_und_betreuernr_an964 AS vrb_filial_und_betreuernr_an964
+    vertriebsweg,
+    eroeffnungsdatum,
+    status,
+    region,
+    berater,
+    vrb_filial_und_betreuernr_an964,
+    kunde_id
 FROM
     raw_kunden
 

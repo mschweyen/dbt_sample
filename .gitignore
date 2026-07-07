@@ -6,4 +6,6 @@ logs/
 .vscode/
 .idea/
 models/*.sql
-*.duckdb
+#*.duckdb
+dbt_internal_packages/
+/.user.yml
