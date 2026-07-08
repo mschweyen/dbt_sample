@@ -22,10 +22,17 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   dbt_sample:
-    +materialized: view
+    +materialized: table
     src:
-      +materialized: view # ephemeral
+      +schema: src
+      +materialized: table # view ephemeral table
+    stg:
+      +schema: stg
+    dwh:
+      +schema: dwh
+
 
 seeds:
   dbt_sample:
     +delimiter: ";"
+#    +materialized: view # vbu: tried like this, did not work (so far)

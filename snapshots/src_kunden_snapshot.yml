@@ -1,0 +1,9 @@
+#snapshots:
+#  - name: scd_src_kunden
+#    relation: source('sources_dbt_sample', 'src_kunden')
+#    config:
+#      unique_key: kunde_id
+#      strategy: timestamp
+#      updated_at: change_date
+#      hard_deletes: invalidate
+#      dbt_valid_to_current: "strptime('31.12.9999', '%d.%m.%Y')"
