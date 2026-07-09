@@ -5,7 +5,7 @@ WITH raw_bestaende AS (
         {{ ref('bestaende') }}
 )
 SELECT
-    datum,
+    date(strptime(datum, '%d.%m.%Y')) as datum,
     aum,
     kunde_id
 FROM

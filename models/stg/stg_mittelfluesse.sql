@@ -5,7 +5,7 @@ WITH raw_mittelfluesse AS (
         {{ ref('mittelfluesse') }}
 )
 SELECT
-    datum,
+    date(strptime(datum, '%d.%m.%Y')) as datum,
     mittelzufluss,
     mittelabfluss,
     kunde_id

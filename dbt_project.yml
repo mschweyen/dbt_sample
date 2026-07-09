@@ -30,6 +30,8 @@ models:
       +schema: stg
     dwh:
       +schema: dwh
+    mart:
+      +schema: mart
 
 
 seeds:
