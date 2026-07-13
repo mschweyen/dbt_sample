@@ -4,6 +4,9 @@ models:
     columns:
       - name: kunde_id
         description: identifier for client, unique in combination with validity time frame
+        data_tests:
+#          - unique # vbu: this one will fail because it is unique in combination with validity time frame
+          - not_null
 
       - name: vertriebsweg
         description: vertriebsweg
@@ -35,4 +38,14 @@ models:
       - name: is_current
         description: is_current
 
-
+  - name: fct_bestaende_mittelfluesse
+    description: Faktentabelle fuer Bestaende und Mittelfluesse
+    columns:
+      - name: kunde_id
+        description: kunde_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_kunden')
+                field: kunde_id

@@ -1,5 +1,5 @@
 
-# info vbu: this file was needed for making snapshots
+# VBU info: this file was needed for making snapshots
 
 sources:
   - name: sources_dbt_sample

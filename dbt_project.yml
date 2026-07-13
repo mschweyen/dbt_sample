@@ -3,6 +3,7 @@ name: 'dbt_sample'
 version: '1.0.0'
 
 # This setting configures which "profile" dbt uses for this project.
+# VBU: profile comes from profiles.yml
 profile: 'dbt_sample'
 
 # These configurations specify where dbt should look for different types of files.
