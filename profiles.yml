@@ -1,0 +1,13 @@
+dbt_sample:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: dev.duckdb
+      threads: 1
+      schema: dev_default
+    prod:
+      type: duckdb
+      path: prod.duckdb
+      threads: 4
+      schema: prd_default

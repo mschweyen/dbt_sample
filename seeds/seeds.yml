@@ -1,19 +1,23 @@
 version: 2
 
 seeds:
-
   - name: kunden
     config:
+      schema: seeds
       column_types:
         changedate: varchar(100)
         vrb_filial_und_betreuernr_an964: varchar(100)
   
   - name: mittelfluesse
     config:
+      schema: seeds
       column_types:
         datum: varchar(100)
   
   - name: bestaende
     config:
+      schema: seeds
       column_types:
         datum: varchar(100)
+
+

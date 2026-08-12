@@ -1,0 +1,16 @@
+
+# VBU info: this file was needed for making snapshots
+
+sources:
+  - name: sources_dbt_sample
+    schema: stg
+    tables:
+      - name: stg_kunden
+        identifier: stg_kunden
+#        columns:
+#          - name: xxxx
+#          - name: xxxx
+      - name: stg_bestaende
+        identifier: stg_bestaende
+      - name: stg_mittelfluesse
+        identifier: stg_mittelfluesse

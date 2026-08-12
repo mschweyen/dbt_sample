@@ -1,0 +1,51 @@
+models:
+  - name: dim_kunden
+    description: table represents clients
+    columns:
+      - name: kunde_id
+        description: identifier for client, unique in combination with validity time frame
+        data_tests:
+#          - unique # vbu: this one will fail because it is unique in combination with validity time frame
+          - not_null
+
+      - name: vertriebsweg
+        description: vertriebsweg
+
+      - name: eroeffnungsdatum
+        description: eroeffnungsdatum
+
+      - name: status
+        description: status
+
+      - name: region
+        description: region
+
+      - name: berater
+        description: berater
+
+      - name: vrb_filialnr
+        description: vrb_filialnr
+
+      - name: vrb_betreuernr
+        description: vrb_betreuernr
+
+      - name: valid_from
+        description: valid_from
+
+      - name: valid_to
+        description: valid_to
+
+      - name: is_current
+        description: is_current
+
+  - name: fct_bestaende_mittelfluesse
+    description: Faktentabelle fuer Bestaende und Mittelfluesse
+    columns:
+      - name: kunde_id
+        description: kunde_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_kunden')
+                field: kunde_id
