@@ -1,0 +1,8 @@
+﻿dz_case_study:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: dz_case_study.duckdb
+      schema: dbo
+      threads: 4
