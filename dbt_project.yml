@@ -1,29 +1,34 @@
-
-name: 'dbt_sample'
+﻿name: 'dz_case_study'
 version: '1.0.0'
+config-version: 2
+profile: 'dz_case_study'
 
-# This setting configures which "profile" dbt uses for this project.
-profile: 'dbt_sample'
-
-# These configurations specify where dbt should look for different types of files.
-# The `model-paths` config, for example, states that models in this project can be
-# found in the "models/" directory. You probably won't need to change these!
 model-paths: ["models"]
-analysis-paths: ["analyses"]
-test-paths: ["tests"]
 seed-paths: ["seeds"]
-macro-paths: ["macros"]
-snapshot-paths: ["snapshots"]
-
-clean-targets:         # directories to be removed by `dbt clean`
-  - "target"
-  - "dbt_packages"
-
 
 models:
-  dbt_sample:
-    +materialized: view
+  dz_case_study:
+    staging:
+      +materialized: view
+    dwh:
+      +materialized: table
+    marts:
+      +materialized: table
 
 seeds:
-  dbt_sample:
+  dz_case_study:
     +delimiter: ";"
+    kunden:
+      +column_types:
+        changedate: varchar
+        eroeffnungsdatum: varchar
+        vrb_filial_und_betreuernr_an964: varchar
+        kunde_id: varchar
+    bestaende:
+      +column_types:
+        datum: varchar
+        kunde_id: varchar
+    mittelfluesse:
+      +column_types:
+        datum: varchar
+        kunde_id: varchar
